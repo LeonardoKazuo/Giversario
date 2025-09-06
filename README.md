@@ -1,2 +1,2 @@
 # Giversario
-Pares do niverda gi
+Pares do niver da gi
