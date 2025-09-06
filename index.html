@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chave de Acesso</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+    #resultado { margin-top: 20px; font-size: 18px; color: #333; }
+    input, button { padding: 10px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Digite sua chave de acesso</h1>
+  <input type="text" id="chave" placeholder="Digite a chave aqui" />
+  <button onclick="verificarChave()">Enviar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    const chaves = {
+      "chave123": "Este é o texto secreto para a chave 123.",
+      "teste456": "Outro texto exclusivo para a chave teste456.",
+      "abc789": "Mensagem especial para quem tem a chave abc789."
+    };
+
+    function verificarChave() {
+      const input = document.getElementById("chave").value.trim();
+      const resultado = document.getElementById("resultado");
+
+      if (chaves[input]) {
+        resultado.textContent = chaves[input];
+      } else {
+        resultado.textContent = "Chave inválida. Tente novamente.";
+      }
+    }
+  </script>
+</body>
+</html>
