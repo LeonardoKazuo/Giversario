@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portal de Acesso</title>
+  <title>Seu par no meu niver!</title>
   <style>
     * {
       box-sizing: border-box;
@@ -79,17 +79,19 @@
 </head>
 <body>
   <div class="container">
-    <h1>Digite sua chave de acesso</h1>
-    <input type="text" id="chave" placeholder="Ex: chave123" />
+    <h1>Digite sua chave secreta mágica</h1>
+    <input type="text" id="chave"/>
     <button onclick="verificarChave()">Acessar</button>
     <div id="resultado"></div>
   </div>
 
   <script>
     const chaves = {
-      "chave123": "✅ Texto secreto para chave123: Você desbloqueou a mensagem 1!",
-      "teste456": "🔒 Texto exclusivo da chave teste456: Aqui está a mensagem 2!",
-      "abc789": "🌟 Mensagem VIP para chave abc789: Bem-vindo ao conteúdo especial!"
+      "Elo": "Rico e Leo",
+      "Rico": "Elo e Leo",
+      "Leo": "Rico e Elo",
+      "Tatha": "Juliano",
+      "Juliano": "Tatha"
     };
 
     function verificarChave() {
