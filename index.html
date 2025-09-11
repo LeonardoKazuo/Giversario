@@ -1,111 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Seu par no meu niver!</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #4facfe, #00f2fe);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
-    .container {
-      background-color: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      width: 100%;
-      max-width: 400px;
-      text-align: center;
-    }
-
-    h1 {
-      margin-bottom: 20px;
-      font-size: 24px;
-      color: #333;
-    }
-
-    input[type="text"] {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      border: 2px solid #ddd;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      transition: border-color 0.3s;
-    }
-
-    input[type="text"]:focus {
-      border-color: #4facfe;
-      outline: none;
-    }
-
-    button {
-      padding: 12px 24px;
-      font-size: 16px;
-      background-color: #4facfe;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    button:hover {
-      background-color: #00c3ff;
-    }
-
-    #resultado {
-      margin-top: 20px;
-      font-size: 18px;
-      color: #333;
-    }
-
-    .erro {
-      color: #d00000;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quem é meu par?</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="container">
-    <h1>Digite sua chave secreta mágica</h1>
-    <input type="text" id="chave"/>
-    <button onclick="verificarChave()">Acessar</button>
-    <div id="resultado"></div>
-  </div>
 
-  <script>
-    const chaves = {
-      "Elo": "Rico e Leo",
-      "Rico": "Elo e Leo",
-      "Leo": "Rico e Elo",
-      "Tatha": "Juliano",
-      "Juliano": "Tatha"
-    };
-
-    function verificarChave() {
-      const input = document.getElementById("chave").value.trim();
-      const resultado = document.getElementById("resultado");
-
-      if (chaves[input]) {
-        resultado.innerHTML = chaves[input];
-        resultado.classList.remove("erro");
-      } else {
-        resultado.textContent = "❌ Chave inválida. Tente novamente.";
-        resultado.classList.add("erro");
-      }
-    }
-  </script>
+<body class="senha">
+    <div class="container moldura2">
+        <div class="content">
+            <h1>Quem é o <br>meu par?</h1>
+            <label for="chave">insira sua senha</label>
+            <div class="inputbox">
+                <input type="text" id="chave" />
+                <button id="btnAcessar"></button>
+            </div>
+        </div>
+    </div>
+    <div id="modalIndex" class="modal">
+        <div class="modal-content" id="errada">
+            <div class="pages" id="pages">
+                <div class="page">
+                    <h2 id="mtext">Resposta errada <br> Tente novamente</h2>
+                </div>
+            </div>
+        </div>
+        <div class="modal-content" id="certa">
+            <div class="pages" id="pages">
+                <div class="page cText">
+                    <h2 id="cText"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js" nonce="ig3oo1"></script>
 </body>
+
 </html>

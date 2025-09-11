@@ -1,0 +1,308 @@
+/*
+Fontes
+*/
+
+@font-face {
+  font-family: Vivace;
+  src: url("src/English111VivaceRegular.otf");
+}
+@font-face {
+  font-family: StTitan;
+  src: url("src/ShimanovTypes-ST-Titan-Regular.otf");
+}
+@font-face {
+  font-family: Typewriter;
+  src: url("src/Typewriter.otf");
+}
+
+/*
+Genéricos
+*/
+
+* {
+  box-sizing: border-box;
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(
+        rgba(240, 236, 236, 0.9),
+        rgba(240, 236, 236, 0.9)
+      ),
+      url("src/backgro4.jpg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50em;
+
+    .container {
+      padding: 30px;
+      border-radius: 0.5em;
+      width: 25%;
+      min-width: 20rem;
+      max-height: 40rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+        font-family: Vivace;
+        font-size: 3em;
+        font-weight: 400;
+        line-height: 0.9em;
+        color: #b00074;
+      }
+    }
+  }
+}
+
+/*
+Pagina de senhas
+*/
+
+.senha {
+  margin-right: 10em;
+  margin-left: 10em;
+
+  input[type="text"] {
+    width: 80%;
+    height: 60%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #545283;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+    font-family: Typewriter;
+  }
+
+  input[type="text"]:hover,
+  input[type="text"]:focus {
+    background-color: #ab087410;
+  }
+
+  .inputbox {
+    display: flex;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 10px;
+  }
+
+  button {
+    width: 3em;
+    height: 60%;
+    background: url("src/6.png");
+    background-size: 3.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 1px solid #545283;
+  }
+
+  button:active {
+    border: 2px solid #484779;
+  }
+
+  button:hover {
+    background-color: #ab087410;
+  }
+
+  .moldura2 {
+    height: 85%;
+    border-image-source: url("src/2.png");
+    border-image-slice: 20 fill;
+  }
+
+  label {
+    font-family: TypeWriter;
+    color: #545283;
+    padding-top: 1.3em;
+    font-size: 0.9em;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35%;
+  }
+}
+
+/*
+Pagina de brinde
+*/
+
+body {
+  &.brinde {
+    padding-left: 12em;
+    padding-right: 12em;
+
+    h1 {
+      line-height: 0.9em;
+      margin-top: 0.7em;
+      font-size: 3em;
+      font-family: Vivace;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .container {
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
+      box-sizing: content-box;
+      padding: 20px;
+      padding-top: 0px;
+      min-width: 22rem;
+      max-height: 40rem;
+
+      &.moldura {
+        height: 85%;
+        padding-left: 0px;
+        padding-right: 0px;
+        border-image-source: url("src/Titulo.png");
+        border-image-slice: 100 fill;
+      }
+      .content {
+        margin-top: 50%;
+      }
+    }
+
+    .radioForm {
+      font-family: Typewriter;
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      margin-top: 3em;
+
+      input[type="radio"] {
+        display: none;
+      }
+
+      input[type="radio"]:checked + label::before {
+        color: #b00074;
+        content: "✓";
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 10px;
+      }
+
+      label,
+      label::before {
+        cursor: pointer;
+        display: inline-block;
+        margin-right: 5px;
+        vertical-align: middle;
+      }
+
+      label::before {
+        border-radius: 6px;
+        border: 2.8px solid #545283;
+        content: "";
+        height: 18px;
+        width: 18px;
+      }
+    }
+
+    label {
+      font-size: 1em;
+      color: #545283;
+      &#lnao {
+        position: relative;
+        left: 0;
+        top: 0;
+        transition: all 0.4s ease;
+      }
+    }
+  }
+}
+
+/*
+Modais
+*/
+
+.modal {
+  font-family: StTitan;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15em;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+    .modal-content {
+      transform: translateY(0);
+    }
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  .radioForm {
+    margin-left: 1.5em;
+  }
+
+  .modal-content {
+    background: #efdfdf;
+    border-radius: 5px;
+    width: fit-content;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    display: block;
+
+    &#msim {
+      padding: 20px;
+      width: 300px;
+    }
+
+    &#mcerteza {
+      display: none;
+    }
+
+    &#errada {
+      display: none;
+      width: fit-content;
+      height: fit-content;
+      padding-right: 1em;
+      padding-left: 1em;
+    }
+
+    .cText {
+      display: flex;
+      align-items: center;
+      padding-right: 3em;
+      padding-left: 3em;
+    }
+  }
+
+  .pages {
+    display: flex;
+    width: 200%;
+    height: 100%;
+    transition: transform 0.4s ease;
+
+    &.pcerteza {
+      margin: -1em;
+    }
+  }
+
+  .page {
+    width: 50%;
+    box-sizing: border-box;
+  }
+}
